@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+}
+.footer-container{
+  margin-top:-5%;
+}
+@media screen and (min-width: 500px) {
+  .footer-container{
+    margin-top:0;
+  }
+}

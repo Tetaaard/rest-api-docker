@@ -1,0 +1,51 @@
+version: "3"
+
+services:
+
+  #SETUP SERVER CONTAINER
+  api:
+    container_name: server
+    restart: always
+    build: ./server
+    ports:
+      - 8080:8080
+    volumes:
+      - ./server:/api
+      - /api/node_modules
+    environment:
+      - PORT=8080
+    depends_on:
+      - mongo
+    networks:
+      - webappnetwork
+
+  #SETUP MONGO CONTAINER
+  mongo:
+    image: mongo:4.4.6
+    restart: always
+    volumes:
+      - ./data-node:/data/db
+    expose:
+      - 27017
+    ports:
+      - '27017:27017'
+    networks:
+      - webappnetwork
+
+  #SETUP REACT-UI CONTAINER
+  react-ui:
+    build:
+      context: ./client
+    ports:
+      - "3000:3000"
+    container_name: react-ui
+    stdin_open: true
+    volumes:
+       - ./client:/usr/src/app/client
+       - /usr/src/app/client/node_modules
+    networks:
+     - webappnetwork
+     
+networks:
+  webappnetwork:
+    driver: bridge
