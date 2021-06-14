@@ -22,7 +22,7 @@
 ### Exit mongo :
     exit
 
-### import folder database.json in collection pictures with mongodb compass !
+### import folder database.json in collection pictures with cli in root of the project  or with mongodb compass !
     mongoimport --db database --collection pictures --drop --jsonArray --file server/database.json
 
 
