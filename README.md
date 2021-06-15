@@ -10,7 +10,7 @@
 
 ### If you use ubuntu:
     sudo docker exec -it rest-api-docker_mongomongo_1  bash
-### if you use windows:
+### If you use windows:
     winpty docker exec -it rest-api-docker_mongo_1 bash
 
 ### Run  mongo with command:
@@ -22,7 +22,7 @@
 ### Exit mongo :
     exit
 
-### import folder database.json in collection pictures with cli in root of the project  or with mongodb compass !
+### Import folder database.json in collection pictures with cli in root of the project  or with mongodb compass !
     mongoimport --db database --collection pictures --drop --jsonArray --file server/database.json
 
 
