@@ -26,5 +26,5 @@
     mongoimport --db database --collection pictures --drop --jsonArray --file server/database.json
 
 
-# Enjoy and like Q!
+# Enjoy and like the Q!
 
