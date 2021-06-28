@@ -9,7 +9,7 @@
     docker-compose up --build
 
 ### If you use ubuntu:
-    sudo docker exec -it rest-api-docker_mongomongo_1  bash
+    sudo docker exec -it rest-api-docker_mongo_1  bash
 ### If you use windows:
     winpty docker exec -it rest-api-docker_mongo_1 bash
 
